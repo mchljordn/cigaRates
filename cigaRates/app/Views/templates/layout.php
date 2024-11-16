@@ -20,7 +20,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/review">Reviews</a></li>
                 <li><a href="/review/create">Add Review</a></li>
-                <li><a href="/login"> Login </a></li>
+                <li><a href="/SignupController/store"> Sign Up </a></li>
             </ul>
         </nav>
     </header>

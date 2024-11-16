@@ -1,6 +1,6 @@
 </main>
     <footer>
-        <p>&copy; 2024 Review Rokok. All rights reserved.</p>
+        <p>&copy;<?= date('Y') ?> CigaRates. All rights reserved.</p>
     </footer>
 </body>
 </html

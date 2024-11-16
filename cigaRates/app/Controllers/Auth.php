@@ -41,7 +41,7 @@ class Auth extends BaseController
                 }
             }
         }    
-        return view('login', $data);
+        return view('signup', $data);
     }
 
     private function setUserSession($user)
@@ -86,7 +86,7 @@ class Auth extends BaseController
                 return redirect()->to('/');
             }
         }
-        return view('register', $data);
+        return view('signin', $data);
     }
 
     public function logout()
