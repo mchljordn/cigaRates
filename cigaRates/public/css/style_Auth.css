@@ -1,0 +1,115 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #444;
+    text-align: center;
+}
+
+form p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    padding: 8px;
+    font-size: 1em;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+    width: 50%;
+    margin: 0 auto;
+    text-align: right;
+}
+
+#auth_button_back {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: left; /* Memastikan teks pada button berada di kiri */
+    float: left; /* Membuat button berada di sisi kiri */
+}
+
+#auth_button_back:hover {
+    background-color: #444; /* Mengubah warna button saat hover */
+}
+
+
+form button {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    align-self: flex-end;
+}
+
+form button:hover {
+    background-color: #444;
+}
+
+form a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form a:hover {
+    color: #444;
+}
+
+p {
+    text-align: center;
+}
+
+p.success {
+    color: green;
+    font-size: 1em;
+}
+
+p.error {
+    color: red;
+    font-size: 1em;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+ul.validation-errors {
+    color: red;
+    font-size: 0.9em;
+    padding-left: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #666;
+}
