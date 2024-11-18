@@ -20,7 +20,11 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/review">Reviews</a></li>
                 <li><a href="/review/create">Add Review</a></li>
-                <li><a href="/SignupController/store"> Sign Up </a></li>
+                <?php if(!$isLoggedIn): ?>
+                <li><a href="/signup"> Sign Up </a></li>
+                <?php else:?>
+                    <li><a href="/logout"> Logout </a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>

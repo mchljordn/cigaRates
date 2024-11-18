@@ -9,6 +9,6 @@ class UserModel extends Model{
  'username',
  'email',
  'password',
- 'created_at'
+ 'join_date'
  ];
 }

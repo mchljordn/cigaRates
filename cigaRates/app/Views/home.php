@@ -1,7 +1,7 @@
 <?= $this->extend('templates/layout') ?>
 
 <?= $this->section('content') ?>
-<h2>Selamat Datang di Review Rokok</h2>
+<h2>Selamat Datang <?= esc($username) ?> di CigaRates</h2>
 <p>Website sederhana untuk berbagi pengalaman merokok Anda.</p>
 
 <h3>Review Terbaru</h3>
@@ -27,4 +27,5 @@
         </div>
     <?php endforeach; ?>
 </div>
+
 <?= $this->endSection() ?>

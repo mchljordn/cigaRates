@@ -26,7 +26,7 @@
                     </div>
                     
                     <div class="d-grid">
-                        <p id="login-text">Don't have an account yet? <a href='SignupController/store'>Register here</a></p>
+                        <p id="login-text">Don't have an account yet? <a href='/signup'>Register here</a></p>
                         <button id="back-button" type="button" onclick="location.href='/'">Back</button>
                         <button type="submit" class="btn btn-success">Submit</button>
                     </div>     

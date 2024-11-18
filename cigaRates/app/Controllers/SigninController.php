@@ -8,7 +8,7 @@ class SigninController extends Controller
     public function index()
     {
         helper(['form']);
-        echo view('signin');
+        return view('signin');
     } 
 
     public function loginAuth()
@@ -19,7 +19,7 @@ class SigninController extends Controller
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
 
-        if (!$email || !$password) {
+        if (empty($email) || empty($password)) {
             $session->setFlashdata('msg', 'Email and Password are required.');
             return redirect()->to('/signin');
         }
@@ -31,13 +31,13 @@ class SigninController extends Controller
             $authenticatePassword = password_verify($password, $pass);
             if ($authenticatePassword) {
                 $ses_data = [
-                    'id' => $data['id'],
+                    'id' => $data['user_id'],
                     'username' => $data['username'],
                     'email' => $data['email'],
                     'isLoggedIn' => TRUE
                 ];
                 $session->set($ses_data);
-                return redirect()->to('/dashboard');
+                return redirect()->to('/');
             } else {
                 $session->setFlashdata('msg', 'Password is incorrect.');
                 return redirect()->to('/signin');

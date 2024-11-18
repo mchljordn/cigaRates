@@ -15,6 +15,8 @@ class Home extends BaseController
 
     public function index()
     {
+        $data['username'] = session()->get('username');
+        $data['isLoggedIn'] = session()->get('isLoggedIn');
         $data['latest_reviews'] = $this->reviewModel->orderBy('created_at', 'DESC')
                                                     ->limit(5)
                                                     ->findAll();

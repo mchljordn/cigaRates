@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ReviewModel;
+use App\Models\ProductModel;
 
 class Review extends BaseController
 {
@@ -17,6 +18,22 @@ class Review extends BaseController
     {
         $data['reviews'] = $this->reviewModel->findAll();
         return view('review_list', $data);
+    }
+
+    public function store()
+    {
+        $reviewModel = new ReviewModel();
+
+        $data = [
+            'product_id' => $this->request->getPost('product_id'),
+            'rating'     => $this->request->getPost('rating'),
+            'review'     => $this->request->getPost('review'),
+            'created_at' => date('Y-m-d H:i:s')
+        ];
+
+        $reviewModel->save($data);
+
+        return redirect()->to('/review')->with('message', 'Review berhasil ditambahkan.');
     }
 
     public function create()
