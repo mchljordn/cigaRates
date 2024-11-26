@@ -111,3 +111,51 @@ footer {
     font-size: 0.8em;
     color: #666;
 }
+.product-showcase-container {
+    margin: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between product cards */
+}
+
+.product-card {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 100%;
+    max-width: auto; 
+    background-color: #f9f9f9;
+}
+
+.product-image-container {
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.product-image {
+    width: 100px; /* Adjust image size as needed */
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-details {
+    flex-grow: 1; /* Allow details to expand */
+}
+
+.product-details h3 {
+    margin: 0 0 10px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    color: #333;
+}
+
+.product-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}

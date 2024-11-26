@@ -15,7 +15,7 @@
             </ul>
         <?php endif; ?>
 
-        <form action="/SignupController/store" method="post">
+        <form action="/signup/store" method="post">
             <div>
                 <input type="text" name="username" placeholder="username" value="<?= set_value('username') ?>">
             </div>

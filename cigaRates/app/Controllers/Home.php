@@ -3,32 +3,34 @@
 namespace App\Controllers;
 
 use App\Models\ReviewModel;
+use App\Models\ProductModel;
 
 class Home extends BaseController
 {
     protected $reviewModel;
+    protected $productModel;
 
     public function __construct()
     {
         $this->reviewModel = new ReviewModel();
+        $this->productModel = new ProductModel();
     }
 
     public function index()
     {
-        $data['username'] = session()->get('username');
-        $data['isLoggedIn'] = session()->get('isLoggedIn');
-        $data['latest_reviews'] = $this->reviewModel->orderBy('created_at', 'DESC')
-                                                    ->limit(5)
-                                                    ->findAll();
-        $data['top_rated'] = $this->reviewModel->orderBy('rating', 'DESC')
-                                               ->limit(5)
-                                               ->findAll();
-        
+        $data = array_merge($this->data, [
+            'latest_reviews' => $this->reviewModel->getLatestReviews(5),
+            'random_cigarettes' => $this->productModel->orderBy('RAND()')
+                                                     ->limit(4)
+                                                     ->findAll()
+        ]);
+
         return view('home', $data);
     }
 
     public function about()
     {
-        return view('about');
+        $this->data['title'] = 'About CigaRates';
+        return view('about', $this->data);
     }
 }

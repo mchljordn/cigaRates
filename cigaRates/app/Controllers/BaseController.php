@@ -43,6 +43,9 @@ abstract class BaseController extends Controller
      */
     // protected $session;
 
+    // Add protected data property
+    protected $data = [];
+
     /**
      * @return void
      */
@@ -54,5 +57,12 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+        
+        // Initialize common view data
+        $this->data = [
+            'isLoggedIn' => session()->get('isLoggedIn') ?? false,
+            'username' => session()->get('username') ?? '',
+            'title' => 'CigaRates'
+        ];
     }
 }
