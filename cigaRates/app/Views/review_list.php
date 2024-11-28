@@ -4,6 +4,7 @@
 <div class="review-container">
     <?php if (session()->get('isLoggedIn')): ?>
         <a href="/review/create" class="btn btn-primary">Add New Review</a>
+        <a href="/product/showcase" class="btn btn-primary">See All Products</a>
         <?php if (session()->has('message')): ?>
             <div class="alert alert-info"><?= session('message') ?></div>
         <?php endif; ?>

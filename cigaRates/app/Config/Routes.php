@@ -7,7 +7,6 @@ use CodeIgniter\Router\RouteCollection;
 $routes = Services::routes();
 
 $routes->get('/', 'Home::index');
-$routes->get('/about', 'Home::about');
 
 $routes->get('/review', 'ReviewController::index');
 $routes->get('/review/create', 'ReviewController::createForm');

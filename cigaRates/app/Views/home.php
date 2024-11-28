@@ -41,20 +41,14 @@
 
     <?php if (session()->get('isLoggedIn')): ?>
         <div class="action-buttons">
-            <a href="/review/create" class="btn btn-primary">Review another product</a>
-            <a href="/review" class="btn btn-secondary">View Your Reviews</a>
+            <a href="/review/create" class="btn review-another-home">Review another product</a>
+            <a href="/review" class="btn review-another-home">My Reviews</a>
         </div>
     <?php endif; ?>
 
     <div class="reviews-section">
         <div class="section-header">
             <h3>Latest Reviews</h3>
-            <div class="filter-controls">
-                <select id="sortBy" class="form-control">
-                    <option value="date">Sort by Date</option>
-                    <option value="rating">Sort by Rating</option>
-                </select>
-            </div>
         </div>
 
         <div class="reviews-grid">

@@ -1,7 +1,7 @@
 
 1. daftar rokok random di home                              |done   |
 2. add review tidak usah langsung redirect                  |wont   |
-3. searching product                                        |not yet|    
+3. searching product                                        |done   |    
 4. bintang review                                           |done   |
 5. multipage di product showcase                            |not yet|
 6. akun lain dapat melihat my review akun lain              |done   |
@@ -15,7 +15,7 @@
 10. product rokok 30 lagi ? maybe                           |wont   |
     11. gambar untuk product yang belum (id 37-70)          |done   |
 
-3. searching product                                        |not yet|    
-5. multipage di product showcase                            |not yet|
+3. searching product                                        |not yet|       |done|
+5. multipage di product showcase                            |not yet|       keknya gabakal boy       
 7. edankeun css na boy                                      |not yet|
-8. gaboleh review dua kali,                                 |not yet|
+8. gaboleh review dua kali,                                 |not yet|       ini masih eror
