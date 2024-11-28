@@ -22,7 +22,7 @@
                         <p>Desc&nbsp&nbsp: <?= esc($product['description']) ?></p>
                         <p>Brand   : <?= esc($product['brand'])?></p>
                         <p>Price   : Rp.<?= esc($product['price'])?></p>
-                        
+                        <a href="/product/<?= $product['product_id'] ?>" class="btn btn-secondary">View Reviews</a>
                     </div>
                 </div>
             <?php endforeach; ?>

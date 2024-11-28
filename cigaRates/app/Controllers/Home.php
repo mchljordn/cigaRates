@@ -19,10 +19,8 @@ class Home extends BaseController
     public function index()
     {
         $data = array_merge($this->data, [
-            'latest_reviews' => $this->reviewModel->getLatestReviews(5),
-            'random_cigarettes' => $this->productModel->orderBy('RAND()')
-                                                     ->limit(4)
-                                                     ->findAll()
+            'latest_reviews' => $this->reviewModel->getLatestReviews(6),
+            'random_cigarettes' => $this->productModel->orderBy('RAND()')->limit(10)->findAll()
         ]);
 
         return view('home', $data);

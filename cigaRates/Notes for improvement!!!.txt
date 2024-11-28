@@ -1,7 +1,21 @@
-daftar rokok random di home
-add review tidak usah langsung redirect
-searching product
-bintang review
-multipage di product showcase
-akun lain dapat melihat my review akun lain
-edankeun css na boy
+
+1. daftar rokok random di home                              |done   |
+2. add review tidak usah langsung redirect                  |wont   |
+3. searching product                                        |not yet|    
+4. bintang review                                           |done   |
+5. multipage di product showcase                            |not yet|
+6. akun lain dapat melihat my review akun lain              |done   |
+7. edankeun css na boy                                      |not yet|
+8. gaboleh review dua kali,                                 |not yet|
+    muncul exception "pengen update?"                       |X      |
+        atau                                                |       |
+    bikin review form nya udah ada isi review sebelumnya    |done   |
+    jadi disediakan tombol update                           |       |
+9. my review harus ada delete jeung update                  |done   |  
+10. product rokok 30 lagi ? maybe                           |wont   |
+    11. gambar untuk product yang belum (id 37-70)          |done   |
+
+3. searching product                                        |not yet|    
+5. multipage di product showcase                            |not yet|
+7. edankeun css na boy                                      |not yet|
+8. gaboleh review dua kali,                                 |not yet|

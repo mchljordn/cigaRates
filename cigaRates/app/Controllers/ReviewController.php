@@ -18,7 +18,12 @@ class ReviewController extends BaseController
 
     public function index()
     {
-        $data['reviews'] = $this->reviewModel->getReviewWithProduct();
+        if (!session()->get('isLoggedIn')) {
+            return redirect()->to('/signin')->with('msg', 'Please login to view your reviews.');
+        }
+
+        $userId = session()->get('id');
+        $data['reviews'] = $this->reviewModel->getReviewsByUser($userId);
         return view('review_list', $data);
     }
 
@@ -45,19 +50,29 @@ class ReviewController extends BaseController
         return view('review_detail', $data);
     }
 
-    public function insertReview($productId = null){
+    public function insertReview($productId = null)
+    {
         if (!session()->get('isLoggedIn')) {
-            return redirect()->to('/signin')->with('msg', 'Please login to create a review.');
+            return redirect()->to('/signin')->with('msg', 'Please login to add a review.');
         }
+
+        $productId = $this->request->getPost('product_id');
+        $userId = session()->get('id');
+
+        // Check if user has already reviewed this product
+        if ($this->reviewModel->hasUserReviewed($userId, $productId)) {
+            return redirect()->back()->with('error', 'You have already reviewed this product.');
+        }
+
         $data = [
-            'product_id' => $this->request->getPost('product_id'),
-            'user_id' => session()->get('id'),
+            'product_id' => $productId,
+            'user_id' => $userId,
             'rating' => $this->request->getPost('rating'),
             'text' => $this->request->getPost('review')
         ];
 
-            $this->reviewModel->insert($data);
-            return redirect()->to('/review')->with('success', 'Review added successfully');
+        $this->reviewModel->insert($data);
+        return redirect()->to('/review')->with('message', 'Review added successfully');
     }
 
     public function createForm($productId = null)
@@ -78,5 +93,50 @@ class ReviewController extends BaseController
         ];
 
         return view('review_form', $data);
+    }
+
+    public function edit($id)
+    {
+        $review = $this->reviewModel->getReviewById($id);
+        
+        if (!$review || $review['user_id'] != session()->get('id')) {
+            return redirect()->to('/review')->with('error', 'You cannot edit this review');
+        }
+
+        $data = [
+            'review' => $review,
+            'title' => 'Edit Review'
+        ];
+
+        return view('review_edit', $data);
+    }
+
+    public function update($id)
+    {
+        $review = $this->reviewModel->find($id);
+        
+        if (!$review || $review['user_id'] != session()->get('id')) {
+            return redirect()->to('/review')->with('error', 'You cannot edit this review');
+        }
+
+        $data = [
+            'rating' => $this->request->getPost('rating'),
+            'text' => $this->request->getPost('review')
+        ];
+
+        $this->reviewModel->updateReview($id, $data);
+        return redirect()->to('/review')->with('message', 'Review updated successfully');
+    }
+
+    public function delete($id)
+    {
+        $review = $this->reviewModel->find($id);
+        
+        if (!$review || $review['user_id'] != session()->get('id')) {
+            return redirect()->to('/review')->with('error', 'You cannot delete this review');
+        }
+
+        $this->reviewModel->deleteReview($id);
+        return redirect()->to('/review')->with('message', 'Review deleted successfully');
     }
 }
