@@ -51,7 +51,7 @@
                 <?php endif; ?>
                 <input type="hidden" name="product_id" value="<?= $selectedProduct['product_id'] ?>">
                 <h3></h3>
-                <div class="product-image-container">
+                <div class="product-image-container-form">
                     <?php
                     $imagePath = "cigaRates img folder/" . esc($selectedProduct['product_id']) . ".png";
                     if (file_exists(FCPATH . $imagePath)): ?>

@@ -25,5 +25,5 @@ $routes->post('/signin/loginAuth', 'SigninController::loginAuth');
 $routes->get('/signin', 'SigninController::index');
 $routes->get('/logout', 'SigninController::logout');
 
-$routes->get('/product/showcase', 'ReviewController::showcase');
+$routes->get('/product/showcase', 'ProductController::showcase');
 $routes->get('/product/(:num)', 'ProductController::view/$1');

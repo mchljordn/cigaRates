@@ -14,14 +14,13 @@
                     $imagePath = "cigaRates img folder/" . esc($product['product_id']) . ".png";
                     if (file_exists(FCPATH . $imagePath)): ?>
                         <img src="/<?= $imagePath ?>" alt="<?= esc($product['product_name']) ?>" class="product-image">
-                        </a>
                     <?php endif; ?>
                 </div>
                 <div class="product-details">
-                    <h3><?= esc($product['product_name']) ?></h3>
-                    <p>Desc&nbsp&nbsp: <?= esc($product['description']) ?></p>
-                    <p>Brand : <?= esc($product['brand']) ?></p>
-                    <p>Price : Rp.<?= esc($product['price']) ?></p>
+                    <h3 class="product-name"><?= esc($product['product_name']) ?></h3>
+                    <p>Desc: <?= esc($product['description']) ?></p>
+                    <p>Brand: <?= esc($product['brand']) ?></p>
+                    <p>Price: Rp.<?= esc($product['price']) ?></p>
                     <div class="product-actions">
                         <a href="/review/create/<?= $product['product_id'] ?>" class="btn btn-primary">Review this cig</a>
                         <a href="/product/<?= $product['product_id'] ?>" class="btn btn-secondary">View Reviews</a>

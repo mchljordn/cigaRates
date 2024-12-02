@@ -14,4 +14,10 @@ class ProductController extends BaseController
 
         return view('product_view', $data);
     }
+    
+    public function showcase()
+    {
+        $model = new ProductModel();
+        return view('product_showcase', ['products' => $model->findAll()]);
+    }
 }

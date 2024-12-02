@@ -10,7 +10,7 @@
 <body>
     <header>
         <span>
-            <img src="image/cigarates_white.png" width="200">
+            <img src="<?=base_url('image/cigarates_white.png') ?>" width="200">
         </span>
         <span>
             <h1>CigaRates</h1>
@@ -34,7 +34,7 @@
         <?= $this->renderSection('content') ?>
     </main>
     <footer>
-        <p>&copy; 2024 CigaRates. All rights reserved.</p>
+        <p style="text-align: center;">&copy; 2024 CigaRates. All rights reserved.</p>
     </footer>
 </body>
 </html>
