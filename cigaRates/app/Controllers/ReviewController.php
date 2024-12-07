@@ -41,7 +41,7 @@ class ReviewController extends BaseController
         }
 
         $data['review'] = $this->reviewModel->getReviewById($id);
-        
+
         if (!$data['review']) {
             return redirect()->to('/review')->with('error', 'Review not found');
         }
@@ -58,8 +58,7 @@ class ReviewController extends BaseController
 
         $productId = $this->request->getPost('product_id');
         $userId = session()->get('id');
-
-        // Check if user has already reviewed this product
+        
         if ($this->reviewModel->hasUserReviewed($userId, $productId)) {
             return redirect()->back()->with('error', 'You have already reviewed this product.');
         }
@@ -81,6 +80,17 @@ class ReviewController extends BaseController
             return redirect()->to('/signin')->with('msg', 'Please login to create a review.');
         }
 
+        $userId = session()->get('id');
+
+        // If product ID is provided, check if user has already reviewed it
+        if ($productId) {
+            $existingReview = $this->reviewModel->getReviewByUserAndProduct($userId, $productId);
+            if ($existingReview) {
+                return redirect()->to('/review/edit/' . $existingReview['id'])
+                    ->with('message', 'You have already reviewed this product. You can edit your review here.');
+            }
+        }
+
         $selectedProduct = null;
         if ($productId) {
             $selectedProduct = $this->productModel->find($productId);
@@ -98,7 +108,7 @@ class ReviewController extends BaseController
     public function edit($id)
     {
         $review = $this->reviewModel->getReviewById($id);
-        
+
         if (!$review || $review['user_id'] != session()->get('id')) {
             return redirect()->to('/review')->with('error', 'You cannot edit this review');
         }
@@ -114,7 +124,7 @@ class ReviewController extends BaseController
     public function update($id)
     {
         $review = $this->reviewModel->find($id);
-        
+
         if (!$review || $review['user_id'] != session()->get('id')) {
             return redirect()->to('/review')->with('error', 'You cannot edit this review');
         }
@@ -131,7 +141,7 @@ class ReviewController extends BaseController
     public function delete($id)
     {
         $review = $this->reviewModel->find($id);
-        
+
         if (!$review || $review['user_id'] != session()->get('id')) {
             return redirect()->to('/review')->with('error', 'You cannot delete this review');
         }

@@ -25,10 +25,4 @@ class Home extends BaseController
 
         return view('home', $data);
     }
-
-    public function about()
-    {
-        $this->data['title'] = 'About CigaRates';
-        return view('about', $this->data);
-    }
 }

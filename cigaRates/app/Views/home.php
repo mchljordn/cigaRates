@@ -8,7 +8,6 @@
         <h2>Welcome to CigaRates</h2>
     <?php endif; ?>
 
-
     <div class="random-products-section">
         <div class="section-header">
             <h3>Start Reviewing!</h3>
@@ -32,10 +31,12 @@
                         <p>Desc&nbsp&nbsp: <?= esc($product['description']) ?></p>
                         <p>Brand : <?= esc($product['brand']) ?></p>
                         <p>Price : Rp.<?= esc($product['price']) ?></p>
-                        <a href="/review/create/<?= $product['product_id'] ?>" class="btn btn-primary" style="width: auto;display: flex; justify-content: center; align-items: center;">
+                        <a href="/review/create/<?= $product['product_id'] ?>" class="btn btn-primary"
+                            style="width: auto;display: flex; justify-content: center; align-items: center;">
                             Review this cig
                         </a>
-                        <a href="/product/<?= $product['product_id'] ?>" class="btn btn-secondary" style="width: auto; display: flex; justify-content: center; align-items: center;">
+                        <a href="/product/<?= $product['product_id'] ?>" class="btn btn-secondary"
+                            style="width: auto; display: flex; justify-content: center; align-items: center;">
                             View Reviews
                         </a>
                     </div>
@@ -60,7 +61,7 @@
             <?php foreach ($latest_reviews as $review): ?>
                 <div class="review-card-home">
                     <div class="review-header">
-                        <h3 class="product-name"><?= esc($review['product_name']) ?></h3>
+                        <h3 class="product-name"><?= esc(data: $review['product_name']) ?></h3>
                         <div class="rating">
                             <?php for ($i = 1; $i <= 5; $i++): ?>
                                 <span class="star <?= $i <= $review['rating'] ? 'filled' : '' ?>">★</span>

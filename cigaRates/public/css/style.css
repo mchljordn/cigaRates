@@ -509,3 +509,18 @@ input[list]::-webkit-calendar-picker-indicator {
     color: #333;
     font-weight: 600;
 }
+
+@keyframes blink {
+    0% { color: inherit; }
+    50% { color: red; }
+    100% { color: inherit; }
+}
+
+.p-footer-caution {
+    font-size: small;
+    animation: blink 0.7s infinite;
+}
+
+.p-footer {
+    color: #333;
+}

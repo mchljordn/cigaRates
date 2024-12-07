@@ -14,7 +14,6 @@ $routes->post('/review/insertReview', 'ReviewController::insertReview');
 $routes->get('/review/create/(:num)', 'ReviewController::createForm/$1');
 $routes->get('/review/(:num)', 'ReviewController::show/$1');
 
-// Review routes
 $routes->get('review/edit/(:num)', 'ReviewController::edit/$1');
 $routes->post('review/update/(:num)', 'ReviewController::update/$1');
 $routes->post('review/delete/(:num)', 'ReviewController::delete/$1');
