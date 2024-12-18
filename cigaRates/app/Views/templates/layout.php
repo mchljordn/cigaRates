@@ -36,11 +36,12 @@
         <?= $this->renderSection('content') ?>
     </main>
     <footer>
-        <p class='p-footer-caution' style='text-align: center;'>Attention! This site is only intended for and/or smokers aged 21
+        <p class='p-footer-caution' style='text-align: center;'>Attention! This site is only intended for and/or smokers
+            aged 21
             years and over (21+)</p>
         <p class='p-footer-caution' style='text-align: center;'>Be an enlightened and responsible smoker</p>
         <p class='p-footer' style='text-align: center;'>&copy; 2024 CigaRates. All rights reserved.</p>
     </footer>
 </body>
-
+                    
 </html>

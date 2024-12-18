@@ -82,7 +82,6 @@ class ReviewController extends BaseController
 
         $userId = session()->get('id');
 
-        // If product ID is provided, check if user has already reviewed it
         if ($productId) {
             $existingReview = $this->reviewModel->getReviewByUserAndProduct($userId, $productId);
             if ($existingReview) {
