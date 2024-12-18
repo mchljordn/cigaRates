@@ -30,7 +30,7 @@ PEROKOK
 
 ## Skema Database
 
-![erd](https://github.com/praktikum-tiunpad-2023/project-pemrograman-web-b-kelompoknomor/blob/main/erd.png?raw=true)
+![erd](https://github.com/mchljordn/cigaRates/blob/main/erd.png?raw=true)
 
 ## License
 
